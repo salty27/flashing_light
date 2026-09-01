@@ -1,0 +1,9 @@
+name = "flashing_light"
+description = "A simple project containing a flashing light"
+version = "0.1.0-dev"
+
+authors = ["Salty27"]
+maintainers = ["Salty27 <example@example.com>"]
+licenses = "MIT OR Apache-2.0 WITH LLVM-exception"
+website = ""
+tags = []
