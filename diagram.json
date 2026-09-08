@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "author": "Héctor Alejandro Gómez Galleguillos",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-st-nucleo-c031c6", "id": "nucleo", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 130.8,
+      "left": 291.8,
+      "attrs": { "color": "red" }
+    }
+  ],
+  "connections": [
+    [ "$serialMonitor:TX", "nucleo:PA3", "", [] ],
+    [ "$serialMonitor:RX", "nucleo:PA2", "", [] ],
+    [ "nucleo:PA5", "led1:C", "green", [ "h0" ] ],
+    [ "led1:A", "nucleo:GND.9", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
