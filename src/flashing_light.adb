@@ -6,7 +6,7 @@ procedure Flashing_Light is
 begin
    RCC_IO_Array (0) := True;
    Pin_Mode (A, 5, Output);
-   Pin_Write (A, 5, High);
+   Pin_Write_Toggle(A, 5);
 
    loop
       null;

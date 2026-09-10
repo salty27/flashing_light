@@ -11,8 +11,9 @@ package HAL.GPIO is
    type Value_Type is (Low, High);
 
    procedure Pin_Mode (Port : Port_Type; Pin : Pin_Type; Mode : Mode_Type);
+   function Pin_Read (Port : Port_Type; Pin : Pin_Type) return Value_Type;
    procedure Pin_Write (Port : Port_Type; Pin : Pin_Type; Value : Value_Type);
-   --  procedure Pin_Write_Toggle (Port : Port_Type; Pin : Pin_Type);
+   procedure Pin_Write_Toggle (Port : Port_Type; Pin : Pin_Type);
 
 private
    PORTA_Base_Address : constant Address := To_Address (16#5000_0000#);
@@ -35,7 +36,5 @@ private
 
    function Get_Port_Register (Port : Port_Type;
                                Offset : Storage_Offset) return Address;
-   --  Gets register address
    function Get_Port_Address (Port : Port_Type) return Address;
-   --  Translates into address
 end HAL.GPIO;
