@@ -1,12 +1,11 @@
-with HAL; use HAL;
 with HAL.GPIO; use HAL.GPIO;
+with HAL.RCC; use HAL.RCC;
 
---TODO before next PR: Clean up HAL and isolate into functions
 procedure Flashing_Light is
 begin
-   RCC_IO_Array (0) := True;
+   Enable_Peripheral_Clock (A);
    Pin_Mode (A, 5, Output);
-   Pin_Write_Toggle(A, 5);
+   Pin_Write_Toggle (A, 5);
 
    loop
       null;
