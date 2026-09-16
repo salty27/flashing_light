@@ -1,7 +1,7 @@
 with "config/flashing_light_config.gpr";
 project Flashing_Light is
 
-   for Source_Dirs use ("src/", "config/");
+   for Source_Dirs use ("src/**", "config/");
    for Object_Dir use "obj/" & Flashing_Light_Config.Build_Profile;
    for Create_Missing_Dirs use "True";
    for Exec_Dir use "bin";
@@ -30,6 +30,7 @@ project Flashing_Light is
       for CPU_Name use "cortex-m0p";
 
       for Number_Of_Interrupts use "32";
+      for Interrupt("16") use "TIM3";
 
       for Memories use ("SRAM", "FLASH");
 

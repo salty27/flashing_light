@@ -70,7 +70,7 @@ __vectors:
         .word __unknown_interrupt_handler /* 13 */
         .word __unknown_interrupt_handler /* 14 */
         .word __unknown_interrupt_handler /* 15 */
-        .word __unknown_interrupt_handler /* 16 */
+        .word __TIM3_handler /* 16 */
         .word __unknown_interrupt_handler /* 17 */
         .word __unknown_interrupt_handler /* 18 */
         .word __unknown_interrupt_handler /* 19 */
@@ -87,6 +87,8 @@ __vectors:
         .word __unknown_interrupt_handler /* 30 */
         .word __unknown_interrupt_handler /* 31 */
 
+   .weak      __TIM3_handler
+   .thumb_set __TIM3_handler,__common_int_handler
 
 	.text
 

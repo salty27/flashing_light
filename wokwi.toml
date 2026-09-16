@@ -1,3 +1,4 @@
 [wokwi]
 version = 1
 firmware = 'bin/flashing_light'
+gdbServerPort=3333

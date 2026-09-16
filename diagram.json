@@ -7,7 +7,7 @@
     {
       "type": "wokwi-led",
       "id": "led1",
-      "top": 130.8,
+      "top": 100.8,
       "left": 291.8,
       "attrs": { "color": "red" }
     }
@@ -15,8 +15,8 @@
   "connections": [
     [ "$serialMonitor:TX", "nucleo:PA3", "", [] ],
     [ "$serialMonitor:RX", "nucleo:PA2", "", [] ],
-    [ "nucleo:PA5", "led1:C", "green", [ "h0" ] ],
-    [ "led1:A", "nucleo:GND.9", "green", [ "v0" ] ]
+    [ "nucleo:PA5", "led1:A", "green", [ "h0" ] ],
+    [ "led1:C", "nucleo:GND.9", "green", [ "v0" ] ]
   ],
   "dependencies": {}
 }
