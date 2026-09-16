@@ -30,6 +30,7 @@ project Flashing_Light is
       for CPU_Name use "cortex-m0p";
 
       for Number_Of_Interrupts use "32";
+      for Interrupt("16") use "TIM3";
 
       for Memories use ("SRAM", "FLASH");
 

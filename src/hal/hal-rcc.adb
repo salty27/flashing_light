@@ -1,9 +1,24 @@
 package body HAL.RCC is
    use HAL.GPIO;
+   use HAL.TIM;
+
+   procedure Enable_Timer (Timer : Timer_Type) is
+      APBENR1_Array : Bits (0 .. 31)
+         with Address => (Base_Address + APBENR1_Offset);
+   begin
+      case Timer is
+         when T2 =>
+            APBENR1_Array (0) := True;
+         when T3 =>
+            APBENR1_Array (1) := True;
+         when others =>
+            null;
+      end case;
+   end Enable_Timer;
 
    procedure Enable_Peripheral_Clock (Port : Port_Type) is
       IOPENR_Array : Bits (0 .. 31)
-         with Address => (Base_Address + IOPENR_Base_Offset), Volatile;
+         with Address => (Base_Address + IOPENR_Offset);
       Port_Index : Integer;
    begin
       case Port is

@@ -1,7 +1,7 @@
 package body HAL.GPIO is
    procedure Pin_Mode (Port : Port_Type; Pin : Pin_Type; Mode : Mode_Type) is
       MODER_Array : Crumbs (0 .. 15)
-         with Address => Get_Port_Register (Port, MODER_Offset), Volatile;
+         with Address => Get_Port_Register (Port, MODER_Offset);
    begin
       case Mode is
          when Input =>
@@ -13,9 +13,9 @@ package body HAL.GPIO is
 
    function Pin_Read (Port : Port_Type; Pin : Pin_Type) return Value_Type is
       IDR_Array : Bits (0 .. 15)
-         with Address => Get_Port_Register (Port, IDR_Offset), Volatile;
+         with Address => Get_Port_Register (Port, IDR_Offset);
    begin
-      if Boolean(IDR_Array (Pin)) then
+      if Boolean (IDR_Array (Pin)) then
          return High;
       else
          return Low;
@@ -26,7 +26,7 @@ package body HAL.GPIO is
                         Pin : Pin_Type;
                         Value : Value_Type) is
       BSRR_Array : Bits (0 .. 31)
-         with Address => Get_Port_Register (Port, BSRR_Offset), Volatile;
+         with Address => Get_Port_Register (Port, BSRR_Offset);
    begin
       case Value is
          when Low =>
